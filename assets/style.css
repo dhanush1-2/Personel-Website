@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* ================================= 
+  NAVBAR
+==================================== */
+.navbar {
+    padding: 0;
+    background-color: #040404;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    color: cyan;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 12px;
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.navbar a i,
+.navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+    color: white;
+}
+
+@media (max-width: 1366px) {
+    .navbar .dropdown .dropdown ul {
+        left: -90%;
+    }
+
+    .navbar .dropdown .dropdown:hover>ul {
+        left: -100%;
+    }
+}
+
+#main {
+    padding-top: 70px;
+}
+
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+
+
+@media (min-width: 769px) {
+
+    .header,
+    .main-nav {
+        display: flex;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+
+        .header {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1150px;
+        }
+    }
+
+}
+
+@media (min-width: 1025px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}
+
+/* ================================= 
+  HERO SECTION
+==================================== */
+
+
+.hero h1 {
+    font-size: 1.5em;
+}
+
+.hero em {
+    color: cyan;
+}
+
+
+
+.hero {
+    background: url('../assets/images/hero-image.jpg');
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: $poppins;
+    height: 100vh;
+    width: 100vw;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            width: 70vw;
+            margin-left: 40px;
+            transform-origin: left;
+            animation: reveal 1s ease-in-out forwards;
+            color: white;
+            font-size: 50px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #040404;
+            z-index: 3;
+            animation: reveal .5s reverse forwards;
+            animation-delay: .5s;
+            transform-origin: ;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #8c8f92;
+            z-index: 2;
+            animation: reveal 0.7s reverse forwards;
+            animation-delay: .7s;
+            transform-origin: left;
+        }
+    }
+}
+
+@keyframes reveal {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* ================================= 
+  ABOUT ME SECTION
+==================================== */
+.about {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.about .section-title {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    align-items: center;
+    font-size: 3rem;
+
+}
+
+.about .row {
+    margin: 20px;
+    padding: 20px;
+
+}
+
+.about .row p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.about .contacts {
+    position: relative;
+    overflow: hidden;
+    left: 910px;
+    bottom: 85px;
+}
+
+.about .contacts .row a {
+    margin: 10px;
+    font-size: 30px;
+    color: #000;
+    transition: 0.5s;
+
+}
+
+.about .contacts .row a:hover {
+    color: cyan;
+    transform: scale(1.2);
+}
+
+.about a {
+    color: #000;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.about a:hover {
+    color: cyan;
+    transform: scale(1.2);
+    text-decoration: none;
+}
+
+.about p {
+    font-size: 18px;
+}
+
+.about .image {
+    height: 300px;
+    border-radius: 50%;
+
+}
+
+
+/*--------------------------------------------------------------
+# My Resume
+--------------------------------------------------------------*/
+#resume {
+    padding: 6rem;
+    background-color: whitesmoke;
+    color: black;
+    padding-top: 4rem;
+
+}
+
+.resume .section-title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.resume .resume-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.resume .row {
+    display: flex;
+    justify-content: center;
+}
+
+.resume .resume-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid black;
+    position: relative;
+}
+
+.resume .resume-item h4 {
+    line-height: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+    font-size: 16px;
+    background: #ffffff;
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 600;
+    border-color: black;
+    border-width: 1px;
+    margin-bottom: 10px;
+}
+
+.resume .resume-item ul {
+    padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+    padding-bottom: 10px;
+}
+
+.resume .resume-item:last-child {
+    padding-bottom: 0;
+}
+
+.resume .resume-item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background: black;
+    border: 2px solid #82909c;
+}
+
+.resume .btn-download {
+    font-size: 25px;
+    background: #ffffff;
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-color: #000000 #000000;
+    border-width: 2px;
+    border-style: solid;
+    transition: 0.4s;
+}
+
+.resume .btn-download:hover {
+    color: cyan;
+    background-color: black;
+    border-color: white;
+    transform: scale(1.15);
+    border-style: none;
+
+}
+
+.resume .resume-button {
+    margin: 15px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/*--------------------------------------------------------------
+# Projects
+--------------------------------------------------------------*/
+.projects {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 2rem;
+    color: #000;
+
+}
+
+.projects .section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin: 3rem;
+}
+
+.project {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: cyan
+}
+
+.projects a {
+    color: #000;
+}
+
+.projects a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.projects .project {
+    height: 300px;
+    width: 300px;
+}
+
+.projects img {
+    width: auto;
+    height: 100px;
+}
+
+.project h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.project p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.footer {
+    background: #000;
+    padding: 30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+}
+
+.footer .row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.6% 0%;
+    color: gray;
+    font-size: 0.8em;
+    justify-content: center;
+}
+
+.footer .row a {
+    text-decoration: none;
+    color: gray;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.footer .row a:hover {
+    color: #fff;
+}
+
+.footer .row ul {
+    width: 100%;
+}
+
+.footer .row ul li {
+    display: inline-block;
+    margin: 0px 30px;
+}
+
+.footer .row a i {
+    font-size: 2em;
+    margin: 0% 1%;
+}
+
+@media (max-width:720px) {
+    .footer {
+        text-align: left;
+        padding: 5%;
+    }
+
+    .footer .row ul li {
+        display: block;
+        margin: 10px 0px;
+        text-align: left;
+    }
+
+    .footer .row a i {
+        margin: 0% 3%;
+    }
+}
